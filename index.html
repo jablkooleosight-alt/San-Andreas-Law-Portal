@@ -5,8 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>San Andreas Law Portal</title>
-  <title>San Andreas Law Portal v1.0.1</title>
   <link rel="stylesheet" href="style.css">
+  <title>San Andreas Law Portal v1.0.2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=1.0.2">
 </head>
 <body>
   <h1>San Andreas Law Portal</h1>
@@ -14,7 +18,8 @@
   <ul id="law-list"></ul>
   <main class="container">
     <section id="auth-section" class="card">
-      <h1>San Andreas Law Portal v1.0.1</h1>
+      <p class="badge">San Andreas • Government Portal</p>
+      <h1>San Andreas Law Portal v1.0.2</h1>
       <p class="muted">
         Tato verze je 100% statická (HTML/CSS/JS) a je připravená pro free hosting jako GitHub Pages / Netlify.
       </p>
@@ -28,14 +33,14 @@
       </section>
 
       <div class="grid-2">
-        <div>
+        <div class="panel">
           <h2>Registrace (nový uživatel = OBČAN)</h2>
           <input type="text" id="register-username" placeholder="Uživatelské jméno">
           <input type="password" id="register-password" placeholder="Heslo">
           <button class="btn" id="register-btn">Registrovat</button>
         </div>
 
-        <div>
+        <div class="panel">
           <h2>Přihlášení</h2>
           <input type="text" id="login-username" placeholder="Uživatelské jméno">
           <input type="password" id="login-password" placeholder="Heslo">
@@ -49,6 +54,7 @@
     <section id="app-section" class="hidden">
       <header class="card row-between">
         <div>
+          <p class="badge">Role-Based Access Portal</p>
           <h1>San Andreas Government</h1>
           <p class="muted">Oficiální právní portál</p>
         </div>
