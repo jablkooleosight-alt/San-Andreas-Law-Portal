@@ -1,15 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+<html lang="cs">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>San Andreas Law Portal</title>
+  <title>San Andreas Law Portal v1.0.1</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>San Andreas Law Portal</h1>
   <input type="text" id="search" placeholder="Search law by name or paragraph">
   <ul id="law-list"></ul>
+  <main class="container">
+    <section id="auth-section" class="card">
+      <h1>San Andreas Law Portal v1.0.1</h1>
+      <p class="muted">
+        Tato verze je 100% statická (HTML/CSS/JS) a je připravená pro free hosting jako GitHub Pages / Netlify.
+      </p>
+
+      <section id="bootstrap-section" class="subcard hidden">
+        <h2>První krok (jen jednou): vytvoř SUPERADMIN účet</h2>
+        <p class="small muted">Bez SUPERADMIN účtu nelze spravovat role ani audit log.</p>
+        <input type="text" id="bootstrap-username" placeholder="SUPERADMIN jméno">
+        <input type="password" id="bootstrap-password" placeholder="SUPERADMIN heslo">
+        <button class="btn" id="bootstrap-btn">Vytvořit SUPERADMIN</button>
+      </section>
+
+      <div class="grid-2">
+        <div>
+          <h2>Registrace (nový uživatel = OBČAN)</h2>
+          <input type="text" id="register-username" placeholder="Uživatelské jméno">
+          <input type="password" id="register-password" placeholder="Heslo">
+          <button class="btn" id="register-btn">Registrovat</button>
+        </div>
+
+        <div>
+          <h2>Přihlášení</h2>
+          <input type="text" id="login-username" placeholder="Uživatelské jméno">
+          <input type="password" id="login-password" placeholder="Heslo">
+          <button class="btn" id="login-btn">Přihlásit</button>
+        </div>
+      </div>
+
+      <p id="auth-message" class="auth-message"></p>
+    </section>
+
+    <section id="app-section" class="hidden">
+      <header class="card row-between">
+        <div>
+          <h1>San Andreas Government</h1>
+          <p class="muted">Oficiální právní portál</p>
+        </div>
+        <div class="row-right">
+          <span id="current-user"></span>
+          <button class="btn" id="logout-btn">Odhlásit</button>
+        </div>
+      </header>
+
+      <section id="role-management-card" class="card hidden">
+        <h2>Správa rolí (SUPERADMIN)</h2>
+        <ul id="user-role-list" class="list"></ul>
+      </section>
+
+      <section id="add-law-card" class="card hidden">
+        <h2>Přidat zákon (SUPERADMIN)</h2>
+        <input type="text" id="new-law-title" placeholder="Název zákona">
+        <textarea id="new-law-content" rows="4" placeholder="Obsah zákona"></textarea>
+        <button class="btn" id="add-law-btn">Přidat zákon</button>
+      </section>
+
+      <section class="card">
+        <h2>Zákony</h2>
+        <input type="text" id="search" placeholder="Vyhledat zákon podle názvu nebo obsahu">
+        <div class="grid-2 law-grid">
+          <ul id="laws-list" class="list"></ul>
+          <article id="law-detail" class="law-detail"></article>
+        </div>
+      </section>
+
+      <section id="audit-card" class="card hidden">
+        <h2>Audit log (vidí pouze SUPERADMIN)</h2>
+        <ul id="audit-list" class="list small"></ul>
+      </section>
+
+      <section class="card">
+        <h2>Návod na free hosting (copy‑paste)</h2>
+        <ol class="small">
+          <li>Nech soubory <strong>index.html</strong>, <strong>style.css</strong>, <strong>script.js</strong> spolu ve stejné složce.</li>
+          <li>Nahraj je na GitHub a zapni GitHub Pages (Settings → Pages → Deploy from branch).</li>
+          <li>Nebo je přetáhni na Netlify Drop (app.netlify.com/drop).</li>
+          <li>Po prvním otevření vytvoř SUPERADMIN účet v sekci „První krok“.</li>
+        </ol>
+      </section>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
